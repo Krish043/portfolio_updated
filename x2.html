@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll Animation</title>
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    <h1>Scroll down to see the animation</h1>
+  </div>
+  <div class="animated-element">
+    <img src="./me.jpg" alt="Animated Element">
+  </div>
+</div>
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var animatedElements = document.querySelectorAll('.animated-element');
+
+  function checkScroll() {
+    animatedElements.forEach(function (element) {
+      var positionFromTop = element.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
+
+      if (positionFromTop - windowHeight <= 0) {
+        element.classList.add('show');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkScroll);
+  checkScroll(); // Check on initial page load
+});
+</script>
+<style>
+  .container {
+  height: 200vh; /* Make the container taller for scrolling */
+}
+
+.content {
+  padding: 20px;
+}
+
+.animated-element {
+  opacity: 0; /* Initially hide the element */
+  transition: opacity 0.5s ease; /* Add smooth transition */
+}
+
+.animated-element.show {
+  opacity: 1; /* Show the element when it enters the viewport */
+}
+</style>
+</html>

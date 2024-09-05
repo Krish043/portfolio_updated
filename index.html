@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css">
+    <script
+      src="https://kit.fontawesome.com/ff281b1ed3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div class="screen1" style="scroll-snap-align: start; width: 100vw;" id="s1">
+      <div class="navbar">
+        <div class="logo"><img src="./avatar.gif" alt=""></div>
+        <ul class="content">
+          <li>
+            <a href="#s1" style="color: inherit; text-decoration: none">Home</a>
+          </li>
+          <li>
+            <a href="#s2" style="color: inherit; text-decoration: none"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#s3" style="color: inherit; text-decoration: none"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#s4" style="color: inherit; text-decoration: none"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <div class="modeSwitch">
+          <button id="switch" onclick="toggleTheme()">
+            <i class="fa-solid fa-moon" id="moon"></i
+            ><i class="fa-regular fa-sun" id="sun" style="display: none"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="ME">
+        <div class="MEleft">
+          <div class="about">
+            <div class="hello">
+              <p>Hello I am</p>
+              <h2 id="title"><span class="auto-type"></span></h2>
+            </div>
+            <p id="info" style="font-size: medium">
+             I'm a B.Tech CSE 3rd-year student at Nirma University. I'm passionate about Full Stack Web Development, Data Structures and Algorithms, and teaching mathematics, often uploading study-related videos on my YouTube channel. I worked as a Full Stack Developer at Nexus Info Company and developed various projects."</p>
+          </div>
+          <div class="MEbuttons">
+            <button onclick="window.open('Resume.pdf','_blank')">
+              Download Resume
+            </button>
+          </div>
+        </div>
+        <div class="MEright">
+          <img src="./meLight.jpg" id="meLight" />
+          <img src="./me.jpg" id="meDark" style="display: none" />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="screen2"
+      style="
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        scroll-snap-align: start;
+      "
+      id="s2"
+    >
+      <h2 id="pt"
+        style="
+          font-family: poppins, sans-serif;
+          font-size: 3rem;
+          width: 100%;
+          margin-top: 50px;
+          display: flex;
+          justify-content: center;
+        "
+        data-aos="fade-down"
+      >
+        About Me
+      </h2>
+
+      <div class="About">
+        <div class="AboutLeft" data-aos="fade-right">
+          <img src="./meLight.jpg" id="meL" />
+          <img src="./me.jpg" id="meD" style="display: none" />
+          <h2>Krish Gangajaliya</h2>
+          <p>
+            I’ve built projects like EDUcrest, SponsorSpace, and Khedut.com using the MERN stack. Academically, I scored 100 in Mathematics in 12th grade and ranked 43rd in GUJCET. I have a research paper on ML-driven ERP for logistics and have consistently earned certificates of excellence in each semester. As an executive member of the Computer Society of India, I thrive on coding, research, and mentoring others.
+          </p>
+        </div>
+        <div class="AboutRight" data-aos="fade-left">
+          <h2>Skills</h2>
+          <div id="Skills"> 
+            <img src="./exp.png" alt="" id="skl">
+            <img src="./mongo.png" alt="" id="skl">
+            <img src="./react.png" alt="" id="skl">
+            <img src="./node.png" alt="" id="skl">
+            <img src="./next.png" alt="" id="skl">
+            
+          </div>
+            <div id="Skills">
+              <img src="./sql.png" alt="" id="skl">
+              <img src="./hcj.png" alt="" id="skl" style="width: 200px; height: auto;">
+           </div>
+          <div id="Skills" style=" padding: 0;">
+            <img src="./c++.png" alt="" id="skl">
+            <img src="./java.png" alt="" id="skl" style="width: 80px; height: auto;">
+            <img src="./python.png" alt="" id="skl">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="screen3"
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        scroll-snap-align: start;
+      "
+      id="s3"
+    >
+      <h2 id="pt"
+        style="
+          font-family: poppins, sans-serif;
+          font-size: 3rem;
+          margin-top: 4%;
+          margin-bottom: -3%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        "
+        data-aos="fade-down"
+      >
+        Projects
+      </h2>
+      <div class="projects-wrap" data-aos="fade-up">
+        <img src="./left.png" id="backBtn" />
+        <div class="projects">
+          <div
+            class="project"
+            id="project3"
+            onclick="window.open('http://127.0.0.1:5500/Memory%20Game/home.html','_blank');"
+          >
+            <h2>Khedut.com</h2>
+            <img src="./khedut.png" width="90%" height="auto" />
+            <h4>Description:</h4>
+            <p>A platform where farmers can directly connect with businessmen without middleman and get maximum profit.</p>
+          </div>
+          <div
+            class="project"
+            id="project3"
+            onclick="window.open('http://127.0.0.1:5500/Memory%20Game/home.html','_blank');"
+          >
+            <h2>Techy Software</h2>
+            <img src="./techy.png" width="90%" height="auto" />
+            <h4>Description:</h4>
+            <p>company website for techy software including gooogle photos, review feature and more</p>
+          </div>
+          <div
+            class="project"
+            id="project3"
+            onclick="window.open('http://127.0.0.1:5500/Memory%20Game/home.html','_blank');"
+          >
+            <h2>Restaurant</h2>
+            <img src="./rest.png" width="90%" height="auto" />
+            <h4>Description:</h4>
+            <p>Demo of authentication with Restaurant website using MERN stack</p>
+          </div>
+
+          <div
+            class="project"
+            id="project3"
+            onclick="window.open('http://127.0.0.1:5500/Memory%20Game/home.html','_blank');"
+          >
+            <h2>EDUcrest</h2>
+            <img src="./EDUcrest.png" width="90%" height="auto" />
+            <h4>Description:</h4>
+            <p>Education website from which you can learn about various courses with video lectures and quizzes</p>
+          </div>
+
+
+          <div
+            class="project"
+            id="project1"
+            onclick="window.open('http://127.0.0.1:5500/Practice/calculator.html','_blank');"
+          >
+            <h2>Calculator</h2>
+            <img src="./calculator.png" width="auto" height="70%" />
+            <h4>Description:</h4>
+            <p>A Calculator designed with HTML CSS and Javascript</p>
+          </div>
+
+          <div
+            class="project"
+            id="project2"
+            onclick="window.open('http://127.0.0.1:5500/Practice/PasswordGenerator.html','_blank');"
+          >
+            <img src="./passwordGen.png" width="100%" height="auto" />
+            <h4>Description:</h4>
+            <p>
+              Random Password Generator in which the user can include features
+              made with HTML CSS and Javascript
+            </p>
+          </div>
+          <div
+            class="project"
+            id="project3"
+            onclick="window.open('http://127.0.0.1:5500/Memory%20Game/home.html','_blank');"
+          >
+            <img src="./memory.png" width="98%" height="auto" />
+            <h4>Description:</h4>
+            <p>Memory game using HTML CSS Javascript</p>
+          </div>
+
+          <div
+            class="project"
+            id="project4"
+            onclick="window.open('http://127.0.0.1:5500/Tic%20Tac%20Toe/Home.html','_blank');"
+          >
+            <img src="./ticTacToe.png" width="350px" height="auto" />
+            <h4>Description:</h4>
+            <p>Tic Tac Toe game using HTML CSS Javascript</p>
+            <p></p>
+          </div>
+          <div
+            class="project"
+            id="project5"
+            onclick="window.open('http://127.0.0.1:5500/Practice/ToDoList.html','_blank');"
+          >
+            <img src="./ToDo.png" width="400px" height="auto" />
+            <h4>Description:</h4>
+            <p>
+              To Do list including add complete and delete features using HTML
+              CSS Javascript
+            </p>
+          </div>
+          <div
+            class="project"
+            id="project6"
+            onclick="window.open('http://127.0.0.1:5500/Currency%20Converter/CurrencyConverter.html','_blank');"
+          >
+            <img src="./currency.png" width="65%" height="auto" />
+            <h4>Description:</h4>
+            <p>
+              currency converter with HTML CSS Javascript inculding usage of API
+            </p>
+          </div>
+        </div>
+        <img src="./right.png" id="nextBtn" />
+      </div>
+      <div class="phoneProjects">
+        <div class="project-card">
+            <h2>Khedut.com</h2>
+            <p>Platform to connect farmers with businesses.</p>
+            <br>
+             <p><strong>Technologies Used:</strong> MERN stack, Gemini API</p>
+        </div>
+        <div class="project-card">
+            <h2>Techy Software</h2>
+            <p>Software solution including review system and Google Photos integration.</p>
+            <br>
+            <p><strong>Technologies Used:</strong> MERN stack</p>
+        </div>
+        <div class="project-card">
+            <h2>EDUcrest</h2>
+            <p>Learning platform with course selection, video transcripts, and quizzes.</p>
+            <br>
+            <p><strong>Technologies Used:</strong> MERN stack, Flask, React, Python, Gemini API</p>
+        </div>
+        <div class="project-card">
+            <h2>Restaurant Authentication</h2>
+            <p>Login page with attractive UI for restaurant management.</p>
+            <br>
+            <p><strong>Technologies Used:</strong> MERN stack</p>
+        </div>
+        <div class="project-card">
+            <h2>Calculator</h2>
+            <p>A simple and interactive calculator application.</p>
+            <br>
+            <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript</p>
+        </div>
+        <div class="project-card">
+            <h2>Password Generator</h2>
+            <p>Tool for generating secure passwords with various options.</p>
+            <br>
+            <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript</p>
+        </div>
+    </div>
+    </div>
+
+    <div
+      class="screen4"
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        scroll-snap-align: start;
+      "
+      id="s4"
+    >
+      <h2 id="pt"
+        style="
+          font-family: poppins, sans-serif;
+          font-size: 3rem;
+          margin-top: 3%;
+          width: 100vw;
+          margin-left: 1%;
+          display: flex;
+          justify-content: center;
+        "
+        data-aos="fade-down"
+      >
+        Contact Me
+      </h2>
+      <div class="contact">
+        <div class="contactLeft" data-aos="fade-right">
+          <h1>Let's chat.</h1>
+          <h2>Tell me about your project</h2>
+          <p>Let's create something together</p>
+
+          <div class="connect">
+            <div class="mail">
+              <i class="fa-regular fa-envelope" style="cursor: pointer" ></i>
+              <p>
+                Mail me <br />
+                krisjchetangangajaliya@gmail.com
+              </p>
+            </div>
+            <div class="call">
+              <i class="fa-solid fa-phone" style="cursor: pointer"></i>
+              <p>
+                call me <br />
+                (+91) 9316876023
+              </p>
+            </div>
+            <div class="social">
+              <p>You can also find me on :</p>
+              <div class="icons">
+                <img id="ins"
+                  src="./insta.png"
+                  onclick="window.open('https://www.instagram.com/krrish_145/','_blank')"
+                />
+                <img
+                  src="./facebook.png"
+                  onclick="window.open('https://www.facebook.com/krishgangajaliya?mibextid=2JQ9oc','_blank')"
+                />
+                <img
+                  src="./linkedin.png"
+                  onclick="window.open('https://www.linkedin.com/in/krish-gangajaliya-802b79266/','_blank')"
+                />
+                <div class="lnks">
+                  <a href="https://www.instagram.com/krrish_145/">Linkedin</a>
+                  <a href="https://www.facebook.com/krishgangajaliya?mibextid=2JQ9oc">Instagram</a>
+                  <a href="https://www.linkedin.com/in/krish-gangajaliya-802b79266/">Facebook</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contactRight" data-aos="fade-left">
+          <h2 style="margin-top: -5%">Send a message to me!</h2>
+          <div class="textArea">
+            <div style="display: flex; column-gap: 5%">
+              <input type="text" placeholder="Your Name" id="name" />
+              <input type="text" placeholder="Your Email ID " id="mail" />
+            </div>
+            <input type="text" placeholder="Subject" id="subject" />
+            <input type="text" placeholder="message" id="message" />
+          </div>
+          <div class="msgbtn" style="display: flex; justify-content: center">
+            <button>Send A Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>  
+</html>
+<script>
+  window.onload = function () {
+  document.body.classList.remove("dark-mode");
+};
+
+function toggleTheme() {
+  const body = document.body;
+  body.classList.toggle("dark-mode");
+  const isDarkMode = body.classList.contains("dark-mode");
+  localStorage.setItem("darkMode", isDarkMode);
+  let imgL = document.getElementById("meLight");
+  let imgD = document.getElementById("meDark");
+  let sun = document.getElementById("sun");
+  let moon = document.getElementById("moon");
+
+  let smallL = document.getElementById("meL");
+  let smallD = document.getElementById("meD");
+  if (imgD.style.display === "none") {
+    imgD.style.display = "block";
+    meD.style.display = "block";
+    imgL.style.display = "none";
+    meL.style.display = "none";
+    sun.style.display = "block";
+    moon.style.display = "none";
+    document.getElementById("title").style.color = "#9754f5";
+  } else {
+    imgL.style.display = "block";
+    meL.style.display = "block";
+    imgD.style.display = "none";
+    meD.style.display = "none";
+    sun.style.display = "none";
+    moon.style.display = "block";
+    document.getElementById("title").style.color = "#ff9d00";
+  }
+}
+const isDarkMode = JSON.parse(localStorage.getItem("darkMode"));
+if (isDarkMode) {
+  document.body.classList.add("dark-mode");
+}
+
+var typed = new Typed(".auto-type", {
+  strings: ["Coder", "Developer","Programmer", "Designer"],
+  typeSpeed: 80,
+  backSpeed: 50,
+  loop: true,
+});
+
+let scrollContainer = document.querySelector(".projects");
+let backBtn = document.getElementById("backBtn");
+let nextBtn = document.getElementById("nextBtn");
+
+scrollContainer.addEventListener("wheel", (evt) => {
+  evt.preventDefault();
+  scrollContainer.scrollLeft += evt.deltaY;
+  scrollContainer.style.scrollBehavior = "auto";
+});
+
+backBtn.addEventListener("click", () => {
+  scrollContainer.style.scrollBehavior = "smooth";
+  scrollContainer.scrollLeft -= 945;
+});
+nextBtn.addEventListener("click", () => {
+  scrollContainer.style.scrollBehavior = "smooth";
+  scrollContainer.scrollLeft += 935;
+});
+
+const p1 = document.querySelector("project1");
+p1.addEventListener("click", function () {
+  window.location.href = "https://www.youtube.com";
+});
+</script>

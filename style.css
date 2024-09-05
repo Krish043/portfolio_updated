@@ -1,0 +1,936 @@
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      transition: background-color 0.3s ease;
+    }
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+      .navbar {
+        background-color: #333;
+        transition: 0.3s ease;
+      }
+      .MEbuttons button {
+        background-color: #9754f5;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.4s ease-in-out;
+        z-index: 1; /* Keep the text above the pseudo-element */
+      }
+      
+      .MEbuttons button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #7d44c5; /* Dark variant of the background color */
+        transition: left 0.4s ease-in-out;
+        z-index: -1; /* Ensure the pseudo-element stays below the button text */
+      }
+      
+      .MEbuttons button:hover::before {
+        left: 0;
+      }
+      
+      .MEbuttons button:hover {
+        background-color: #7d44c5; /* Dark variant of the background color */
+        text-shadow: 1px  black;
+      }
+      
+      .navbar li:hover {
+        cursor: pointer;
+        color: #9754f5;
+        text-decoration: underline;
+      }
+
+      #pt{
+        color:#9754f5;
+        position: relative;
+      }
+      
+#pt::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  width: 20%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #9754f5; /* Color of the underline */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out; /* Adjust timing as needed */
+  z-index: -1; /* Place the underline behind the text */
+}
+
+#pt:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+#pt:hover {
+  cursor: pointer;
+  text-decoration: none; /* Ensure no default underline from text-decoration */
+}
+
+      
+      .AboutLeft, .AboutRight{
+        background-color: #434343;
+        /* box-shadow: 2px 2px 2px black ; */
+      }
+
+      .AboutLeft button {
+        background-color: #9754f5;
+      }
+      .project {
+        background-color: black;
+      }
+      .project:hover {
+        background-color: black;
+        color: #fff;
+      }
+      .contactLeft, .contactRight {
+        background-color: #4c4c4c;
+      }
+      .mail > i,
+      .call > i {
+        background-color: #9754f5;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 13%;
+        height: 90%;
+        border-radius: 100%;
+      }
+
+      @media (max-width: 480px){
+        .phoneProjects>.project-card{
+          background-color: black;
+      }
+      }
+    }
+    .navbar {
+      position: fixed;
+      background-color: white;
+      font-family: "poppins", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      width: 100vw;
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: 0.3s ease;
+    }
+    .navbar li {
+      display: flex;
+      transition: 0.2s ease;
+    }
+    .navbar li:hover {
+      cursor: pointer;
+      color: #ff9d00;
+      text-decoration: underline;
+    }
+    .logo{
+      margin: 5%;
+      /* margin-top:7%; */
+    }
+    .logo>img{
+      border-radius: 100%;
+      border: 1px solid black;
+      width: 45px;
+      height: 45px;
+
+    }
+    .content {
+      width: 50vw;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modeSwitch {
+      margin: 2%;
+    }
+    #switch {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50px;
+    }
+    #switch:hover {
+      cursor: pointer;
+    }
+    #pt{
+      color:#ff9d00;
+      position: relative;
+    }
+    
+#pt::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 40%;
+width: 20%;
+height: 2px; /* Thickness of the underline */
+background-color: #ff9d00; /* Color of the underline */
+transform: scaleX(0);
+transform-origin: bottom right;
+transition: transform 0.3s ease-in-out; /* Adjust timing as needed */
+z-index: -1; /* Place the underline behind the text */
+}
+
+#pt:hover::after {
+transform: scaleX(1);
+transform-origin: bottom left;
+}
+
+#pt:hover {
+cursor: pointer;
+text-decoration: none; /* Ensure no default underline from text-decoration */
+}
+
+    .ME {
+        font-family: "Poppins", sans-serif;
+        margin-top: 5%;
+        font-weight: 600;
+        font-style: normal;
+        width: 100vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .MEleft {
+        margin-left: 10%;
+        width: 55vw;
+        font-size: x-large;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .hello h2 {
+        font-size: 2.3rem;
+        color: #ff9d00;
+        letter-spacing: 0.12em;
+      }
+      
+      .MEright {
+        margin-top: 2%;
+        margin-right: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 50vw;
+      }
+      
+      #meLight,
+      #meDark {
+        width: 35vw;
+        border-radius: 25rem;
+        animation: ryt 1s ease-in;
+      }
+      
+      @keyframes ryt {
+        0% {
+          opacity: 0;
+          transform: translateX(30%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
+      
+      @keyframes up {
+        0% {
+          opacity: 0;
+          transform: translateY(-100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+      }
+      
+      .MEbuttons {
+        margin: 5%;
+        column-gap: 5%;
+        display: flex;
+        width: 100%;
+        height: 35px;
+        justify-content: flex-start;
+      }
+      
+      
+      .MEbuttons button {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        width: 40%;
+        height: 100%;
+        border-style: none;
+        background-color: #ff9d00;
+        color: white;
+        border-radius: 7px;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.4s ease-in-out;
+        z-index: 1; /* Ensure text stays above the animation */
+      }
+      
+      .MEbuttons button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #ff7300; /* Dark variant of the background color */
+        transition: left 0.4s ease-in-out;
+        z-index: -1; /* Keep the pseudo-element below the text */
+      }
+      
+      .MEbuttons button:hover::before {
+        left: 0;
+      }
+      
+      .MEbuttons button:hover {
+        background-color: #ff7300; /* Dark variant of the background color */
+        cursor: pointer;
+      }
+      
+      /* #meLight:hover{
+        border: 5px solid black;
+      } */
+       
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        .ME {
+          flex-direction: column;
+          align-items: center;
+          height: auto;
+        }
+      
+        .MEright {
+          order: 1;
+          width: 90vw;
+          margin: 0;
+          justify-content: center;
+        }
+        #meLight{
+            margin: 15%;
+            width: 70vw;
+        }
+        
+        #meDark{
+            margin: 15%;
+            width: 70vw;
+        }
+      
+        .MEleft {
+          order: 2;
+          width: 90vw;
+          margin-left: 0;
+          margin-top: 10px;
+          font-size: medium;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+        }
+      
+        #meLight,
+        #meDark {
+          width: 60vw;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .MEleft {
+          font-size: small;
+        }
+        #meLight{
+            margin: 15%;
+            width: 70vw;
+        }
+        #meDark{
+            margin: 15%;
+            width: 70vw;
+        }
+        
+        .hello h2 {
+          font-size: 1.5rem;
+        }
+
+        .navbar li{
+          display: none;
+        }
+      
+        .MEbuttons {
+          flex-direction: column;
+          align-items: center;
+          row-gap: 10px;
+          margin: 0;
+          width: 100%;
+        }
+      
+        .MEbuttons button {
+          width: 80%;
+        }
+      }
+      
+#pt{
+  color: #ff9d00;
+}
+.phoneProjects,.lnks{
+  display: none;
+}
+
+
+.About {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  scroll-snap-align: start;
+  height: 80vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2%;
+  padding-left: 4%;
+  box-sizing: border-box;
+}
+
+.AboutLeft, .AboutRight {
+  border: 1px solid black;
+  border-radius: 15px;
+  /* box-shadow: 3px 3px 3px; */
+  width: 45%;
+  height: 95%;
+  margin: 2%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  box-sizing: border-box;
+}
+
+.AboutLeft button {
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  font-weight: 500;
+  font-style: normal;
+  width: 40%;
+  border-style: none;
+  background-color: orange;
+  color: white;
+  border-radius: 7px;
+}
+
+.AboutLeft img {
+  width: 20%;
+  margin-bottom: 3%;
+  border-radius: 100rem;
+}
+
+#Skills {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex-wrap: wrap;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+#skl {
+  width: auto;
+  height: 55px;
+}
+
+@media (max-width: 1024px) {
+  .AboutLeft, .AboutRight {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 820px) {
+  .About{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .AboutLeft{
+    width: 70%;
+    height: auto;
+  }
+  .AboutRight{
+    width: 70%;
+    padding: 5%;
+    height: auto;
+  }
+  #Skills li{
+    height: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .About {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .AboutLeft, .AboutRight {
+    width: 80%;
+    margin: 10px 0;
+  }
+
+  #Skills {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar{
+    z-index: 1;
+  }
+  .MEright{
+    margin-top: 10px;
+  }
+  .projects{
+    visibility: hidden;
+    display: none;
+  }
+  #backBtn, #nextBtn{
+    visibility: hidden;
+  }
+  #s3{
+    background-color: transparent;
+    height: 150vh;
+    margin-top: -200px;
+  }
+  #s4{
+    margin-top: 450px;
+  }
+  .phoneProjects {
+    position: absolute;
+    visibility: visible;
+    font-family: "poppins", sans-serif;
+    width: 100vw;
+    margin-top: 1200px;
+    margin-bottom: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    gap: 20px;
+}
+
+.project-card { 
+  background-color: #ddd;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+  align-self: center;
+  width: 75%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card h2 {
+  margin-top: 0;
+}
+
+.project-card p {
+  margin: 0;
+}
+  .phoneProjects {
+    grid-template-columns: 1fr; /* Only one column */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+
+/* Optional: Add a horizontal scroll if more cards are present */
+.phoneProjects::-webkit-scrollbar {
+    height: 8px;
+}
+
+.phoneProjects::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.phoneProjects::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+  .AboutLeft, .AboutRight { 
+    width: 90%;
+    padding: 4%;
+  }
+
+  .AboutLeft img {
+    width: 30%;
+  }
+
+  .AboutLeft button {
+    width: 60%;
+  }
+  .lnks{
+    display: flex;
+    margin-top: -100px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #s4{
+    margin-top: 550px;
+  }
+  .mail>i, .call>i{
+    visibility: hidden;
+  }
+  .icons>img{
+    visibility: hidden;
+  }
+
+  .textArea{
+    height: 10px;
+  }
+
+  .textArea>#message{
+    height: 200px;
+  }
+
+  .msgbtn{
+    padding: 5%;
+  }
+
+}
+
+    .projects-wrap {
+      display: flex;
+      scroll-snap-align: start;
+    }
+    #backBtn,
+    #nextBtn {
+      display: flex;
+      align-self: center;
+      width: 10vw;
+      height: 25vh;
+    }
+    .projects {
+      display: flex;
+      margin: 2.5%;
+      padding: 2.5%;
+      width: 75vw;
+      height: 74vh;
+      column-gap: 3.5%;
+
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      overflow-x: scroll;
+    }
+    .projects::-webkit-scrollbar {
+      display: none;
+    }
+    .project {
+      background-color: white;
+      flex: none;
+      width: 32.2vw;
+      height: 78vh;
+      margin: 2px;
+      border: 1px solid black;
+      font-family: "poppins", sans-serif;
+      border-radius: 12px;
+      transition: 0.5s;
+    }
+    .project:hover {
+      cursor: pointer;
+      background-color: rgb(231, 231, 231);
+      transform: scale(1.022);
+    }
+    #project1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+    #project2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+    #project3 {
+      width: 64.4vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+    #project4 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+    #project5 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+    #project6 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+
+     .contact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 80vh;
+    }
+    .contactLeft {
+      font-family: "poppins", sans-serif;
+      width: 50vw;
+      height: 50vh;
+      margin: 3%;
+      padding: 5%;
+      border: 1px solid black;
+      border-radius: 1.7rem;
+    }
+    .connect {
+      height: 32vh;
+    }
+    .mail > i,
+    .call > i {
+      background-color: #fff;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 13%;
+      height: 90%;
+      border-radius: 100%;
+    }
+    .mail,
+    .call {
+      padding: 1%;
+      height: 30%;
+      margin: 2%;
+      column-gap: 4%;
+      display: flex;
+      align-items: center;
+    }
+    .social {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 9vh;
+      width: 100%;
+      column-gap: 5%;
+    }
+    #ins{
+      height: 100%;
+    }
+    .icons > img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 7%;
+      border-radius: 1%;
+      padding: 1%;
+      width: 100%;
+      height: 70%;
+      transition: 0.5s ease;
+    }
+
+    .icons > img:hover {
+      cursor: pointer;
+      transform: scale(1.15);
+    }
+
+    .contactRight {
+      font-family: "poppins", sans-serif;
+      width: 50vw;
+      height: 50vh;
+      margin: 3%;
+      padding: 5%;
+      border: 1px solid black;
+      border-radius: 1.7rem;
+    }
+
+    .textArea {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 1%;
+      row-gap: 5%;
+    }
+    #name {
+      font-family: "poppins", sans-serif;
+      width: 50%;
+      border-radius: 0.5rem;
+      padding: 2%;
+      border: 1px solid black;
+    }
+    #mail {
+      font-family: "poppins", sans-serif;
+      width: 50%;
+      border-radius: 0.5rem;
+      padding: 2%;
+      border-style: none;
+      border: 1px solid black;
+    }
+    #subject {
+      font-family: "poppins", sans-serif;
+      border-radius: 0.5rem;
+      border-style: none;
+      padding: 2%;
+      border: 1px solid black;
+    }
+    #message {
+      display: flex;
+      text-align: left;
+      font-family: "poppins", sans-serif;
+      height: 70%;
+      border-radius: 0.5rem;
+      border-style: none;
+      padding: 2%;
+      border: 1px solid black;
+    }
+
+    .msgbtn {
+      height: 5vh;
+      margin-top: 1.5%;
+    }
+    .msgbtn button {
+      font-family: "poppins", sans-serif;
+      cursor: pointer;
+      font-weight: 500;
+      font-style: normal;
+      width: 40%;
+      height: 100%;
+      border-style: none;
+      background-color: #ff9d00;
+      color: white;
+      border-radius: 7px;
+      border-style: none;
+    }
+
+    @media (max-width: 768px) {
+      .contact {
+        flex-direction: column; 
+        height: auto;
+        padding: 5%;
+      }
+    
+      .contactLeft, .contactRight {
+        width: 90vw; 
+        margin: 5%; 
+      }
+    
+      .mail > i, .call > i {
+        width: 30px;
+        height: 30px;
+      }
+        .icons{
+          display: flex;
+        }
+      .icons > img {
+        width: 105px;
+        height: auto;
+      }
+      #ins{
+        width: 110px;
+        height: auto;
+      }
+    
+      .msgbtn {
+        height: auto; 
+        margin-top: 5%; 
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .mail, .call {
+        flex-direction: column; 
+        align-items: flex-start; 
+        column-gap: 0; 
+      }
+    
+      .mail > i, .call > i {
+        margin-bottom: 10px; 
+      }
+    
+      .icons {
+        flex-wrap: wrap; 
+        row-gap: 10px; 
+      }
+    
+      .icons > img {
+        width: 20px;
+        height: 20px;
+      }
+    
+      .msgbtn button {
+        width: 100%; 
+      }
+    }
+   
+    
+    
